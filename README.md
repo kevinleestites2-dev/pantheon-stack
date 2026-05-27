@@ -1,72 +1,62 @@
-# PANTHEON STACK
+# 👑 ArchonPrime — The Prime That Commands All Primes
 
-The unified AI replacement stack. Five engines. One command.
+*"Above the swarm. Below the Forgemaster. The will made architecture."*
+
+ArchonPrime is the **meta-layer** of the Pantheon. It is not a bot. It is not a tool. It is the sovereign command stack that orchestrates every Prime in the empire — the operating system the Pantheon runs on.
+
+## The Stack
+
+| Layer | Prime | Role |
+|-------|-------|------|
+| **Face** | OpenHuman | Desktop command center — local memory, 118+ integrations |
+| **Operator** | Mercury Agent | 24/7 soul-driven daemon — Telegram + CLI control |
+| **Evolution** | CORAL | Autonomous self-evolution — isolated workspaces, shared eval loop |
+| **Strategy** | MetaGPT | Role-based reasoning, task decomposition, mission planning |
+| **Executor** | AutoGPT | Autonomous execution loop — turns strategy into action |
+| **Skills** | Mercury Agent Skills | 126+ community tools wired into Mercury |
+| **Relay** | Nexus Relay | Full-duplex bridge — Forgemaster ↔ Red Magic ↔ Cloud |
 
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    OPENHUMAN                            │
-│              (Command Center — Desktop UI)              │
-└──────────────────────┬──────────────────────────────────┘
-                       │
-         ┌─────────────┼─────────────┐
-         │             │             │
-    ┌────▼────┐   ┌────▼────┐  ┌────▼────┐
-    │ MERCURY │   │  CORAL  │  │ METAGPT │
-    │ (Always │   │(Self-   │  │(Strategy│
-    │  -On    │   │ Evolve) │  │ Brain)  │
-    │ Daemon) │   └────┬────┘  └────┬────┘
-    └────┬────┘        │            │
-         │        ┌────▼────┐       │
-         │        │ AUTOGPT │◄──────┘
-         │        │(Executor│
-         │        │  Loop)  │
-         │        └────┬────┘
-         │             │
-         └──────┬───────┘
-                │
-         ┌──────▼──────┐
-         │ NEXUS RELAY │
-         │  (Telegram) │
-         └─────────────┘
+Forgemaster
+     │
+OpenHuman (Face — Desktop)
+     │
+Mercury Agent (Operator — Termux/24h)
+     ├── CORAL (Evolution — self-rewriting)
+     ├── MetaGPT (Strategy — planning brain)
+     │       └── AutoGPT (Executor — action loop)
+     └── Nexus Relay (Bridge — Telegram reporting)
 ```
 
-## Layer Roles
-
-| Layer | Repo | Role |
-|-------|------|------|
-| **Face** | OpenHuman | Desktop UI, memory tree, 118+ integrations |
-| **Operator** | Mercury Agent | 24/7 daemon, Telegram bot, permission-hardened tools |
-| **Evolution** | CORAL | Multi-agent self-improvement loop |
-| **Strategy** | MetaGPT | Role-based reasoning, complex task decomposition |
-| **Executor** | AutoGPT | Autonomous task execution loops |
-| **Reporting** | Nexus Relay | Telegram status, all Primes report here |
+## Automation Flow (GitHub Actions)
+```
+workflow_dispatch
+      │
+  MetaGPT ──► strategy + task decomposition
+      │
+  AutoGPT ──► autonomous execution
+      │
+  Telegram ──► Forgemaster notified
+```
 
 ## Deploy Order
 
-### Step 1 — Mercury on Red Magic (RIGHT NOW)
-One command in Termux. Already wired to your Telegram + Nexus Relay:
-```bash
-curl -fsSL https://raw.githubusercontent.com/kevinleestites2-dev/mercury-agent/main/redmagic_bootstrap.sh -o bootstrap.sh && bash bootstrap.sh
-```
+1. **Mercury** — Termux bootstrap on Red Magic
+   ```bash
+   cd ~ && git clone https://github.com/kevinleestites2-dev/mercury-agent && cd mercury-agent && bash redmagic_bootstrap.sh
+   ```
+2. **CORAL** — GitHub Actions / Termux CLI
+3. **MetaGPT + AutoGPT** — pantheon-stack GitHub Actions workflow
+4. **OpenHuman** — Desktop, when Nexus laptop is ready
 
-### Step 2 — CORAL Evolution Engine (GitHub Actions)
-```bash
-curl -fsSL https://raw.githubusercontent.com/Human-Agent-Society/CORAL/main/install.sh | sh
-coral init pantheon-task
-coral start -c pantheon-task/task.yaml
-```
+## Secrets Required
+- `TELEGRAM_TOKEN` ✅
+- `TELEGRAM_CHAT_ID` ✅
 
-### Step 3 — MetaGPT + AutoGPT (GitHub Actions workflows in this repo)
+## Pantheon Position
+ArchonPrime sits at Layer 0 — above all Primes, below the Forgemaster. It is the will of the empire made architecture.
 
-### Step 4 — OpenHuman (when Nexus laptop is ready)
-Download: https://tinyhumans.ai/openhuman
-
-## Repos
-- https://github.com/kevinleestites2-dev/mercury-agent
-- https://github.com/kevinleestites2-dev/mercury-agent-skills
-- https://github.com/kevinleestites2-dev/CORAL
-- https://github.com/kevinleestites2-dev/MetaGPT
-- https://github.com/kevinleestites2-dev/AutoGPT
-- https://github.com/kevinleestites2-dev/openhuman
+---
+*The meta-layer of the Pantheon. Forged by the Forgemaster.*
